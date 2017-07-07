@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    $(document).ready(function() {
+      $(window).keydown(function(event) {
+        if (event.keyCode == 13) {
+          event.preventDefault();
+          return false;
+        }
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 style="margin-top:20px; margin-bottom:40px; color:#409eef;">Report Creation
+      </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <form action="http://127.0.0.1:8080/forms" method="POST">
+          <div class="form-group">
+            <label for="">Name of unit</label>
+            <input type="text" name="name_of_unit" autocomplete="off" class="form-control" placeholder="Name of Unit" required>
+          </div>
+          <div class="form-group">
+            <label for="">Name of head of unit</label>
+            <input type="text" name="name_of_head_unit" autocomplete="off" class="form-control" placeholder="Name of head of Unit" required>
+          </div>
+          <div class="form-group">
+            <label for="">Start date of Report</label>
+            <input type="text" name="startDate" autocomplete="off" id="datecreate" data-provide="datepicker" required class="form-control" placeholder="Start Date of report">
+            <script type="text/javascript">
+              $('#datecreate').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: "dd/mm/yyyy"
+              });
+            </script>
+          </div>
+          <div class="form-group">
+            <label for="">End date of Report</label>
+            <input type="text" name="endDate" autocomplete="off" id="datecreate2" data-provide="datepicker" required class="form-control" placeholder="End Date of report">
+            <script type="text/javascript">
+              $('#datecreate2').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: "dd/mm/yyyy"
+              });
+            </script>
+          </div>
+          <button type="submit" class="btn btn-success btn-md text-center">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
