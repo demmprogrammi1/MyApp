@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const MethodOverride = require('method-override');
-mongoose.connect('mongodb://jepa:demsammax123@ds143542.mlab.com:43542/jepa');
+mongoose.connect('mongodb://log:pass@ds143542.mlab.com:43542/jepa');
 const ReportSchema = new mongoose.Schema({
   name_of_unit:String,
   name_of_head_unit:String,
